@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "name": "John Doe",
+      "emailId": "johndoe@gmail.com",
+      "password": "yourpassword",
+      "dateOfBirth": "2000-01-01T00:00:00Z",
+      "id": "f267"
+    },
+    {
+      "id": "b01f",
+      "name": "James Maxwell",
+      "emailId": "james985@gmail.com",
+      "password": "mypassword",
+      "dateOfBirth": "2000-02-01T00:00:00Z"
+    },
+    {
+      "id": "0ad2",
+      "name": "parthiv",
+      "emailId": "saikiap1970@gmail.com",
+      "password": "210304Pps#",
+      "confirmPassword": "210304Pps#",
+      "dateOfBirth": "2005-08-03"
+    },
+    {
+      "id": "b3d7",
+      "name": "parthiv",
+      "emailId": "parthivsaikia985@gmail.com",
+      "password": "210304Pps#",
+      "confirmPassword": "210304Pps#",
+      "dateOfBirth": "2002-10-21"
+    },
+    {
+      "id": "5aba",
+      "name": "parthiv",
+      "emailId": "something@gmail.com",
+      "password": "Halsey##149",
+      "confirmPassword": "Halsey##149",
+      "dateOfBirth": "2004-03-21"
+    }
+  ]
+}
