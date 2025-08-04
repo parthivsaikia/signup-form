@@ -1,69 +1,173 @@
-# React + TypeScript + Vite
+# Signup Page with React & TanStack Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A fully-typed, validated signup form built with React, TypeScript, TanStack Form, TailwindCSS, and a fake JSON-server backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Project Overview](#project-overview)
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  - [Clone the Repo](#clone-the-repo)
+  - [Install Dependencies](#install-dependencies)
+  - [Run the Mock Server](#run-the-mock-server)
+  - [Start the Dev Server](#start-the-dev-server)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Validation Rules](#validation-rules)
+- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Overview
+
+This repository contains the source code for a professional signup page, demonstrating how to:
+
+- Scaffold a React + TypeScript app with Vite
+- Build complex, type-safe forms with TanStack Form
+- Apply real-time, field-level and asynchronous validation
+- Style using TailwindCSS
+- Mock a REST API backend with JSON-server
+
+Use this as a starter for your own SaaS signup flows or as a learning reference for form best practices.
+
+---
+
+## Tech Stack
+
+- **Framework**: React (with [Vite](https://vite.dev/) + TypeScript)
+- **Form Library**: [TanStack Form](https://tanstack.com/form)
+- **Styling**: [TailwindCSS](https://tailwindcss.com)
+- **HTTP Client**: Axios
+- **Mock Server**: JSON-server
+
+---
+
+## Features
+
+1. **End-to-end Type Safety**
+2. **Field-level Validation** (onChange, onBlur)
+3. **Async Validation** (check for existing email)
+4. **Password Strength Rules**
+5. **Confirm Password Match**
+6. **Age Restriction (18+ years)**
+7. **Submit Button State** (disabled until valid, loading indicator)
+8. **Responsive & Accessible Markup**
+
+---
+
+## Prerequisites
+
+- Node.js >= 14.x
+- npm >= 6.x
+
+---
+
+## Getting Started
+
+### Clone the Repo
+
+```bash
+git clone https://github.com/your-username/signup-page.git
+cd signup-page
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### Run the Mock Server
+
+```bash
+# starts JSON-server at http://localhost:3000
+npm run server
+```
+
+### Start the Dev Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## Project Structure
+
+```
+signup-page/
+├── db.json               # Fake database for JSON-server
+├── package.json          # Scripts and dependencies
+├── vite.config.ts        # Vite + Tailwind plugin config
+├── src/
+│   ├── App.tsx           # Main signup form implementation
+│   ├── index.css         # Tailwind CSS import
+│   ├── main.tsx          # React entry point
+│   └── helpers/          # Validation utility functions
+│       ├── hasNumber.ts
+│       ├── hasSpecialCharacters.ts
+│       ├── existingEmail.ts
+│       ├── isValidEmail.ts
+│       └── password.ts
+└── README.md             # This file
+```
+
+---
+
+## Usage
+
+1. Fill in **Name**, **Email**, **Password**, **Confirm Password**, and **Date of Birth**.
+2. Real-time errors guide you on correct formats and requirements.
+3. Submit when all fields are valid; data posts to `http://localhost:3000/users`.
+
+---
+
+## Validation Rules
+
+- **Name**: ≥3 chars, no digits, no special chars
+- **Email**: valid email format, uniqueness checked against mock server
+- **Password**: ≥8 chars, uppercase, lowercase, number, special char
+- **Confirm Password**: must match Password
+- **Date of Birth**: must be a valid date, 18+ years old
+
+---
+
+## Future Improvements
+
+- Add form-level error summaries and accessible `aria-` attributes
+- Implement end-to-end tests with Jest & React Testing Library
+- Replace JSON-server with a real backend or GraphQL API
+- Add multi-step (“wizard”) form support
+- Improve UX: loading spinners, API error handling, animations
+
+---
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/your-username/signup-page/issues).
+
+---
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+---
+
+## Contact
+
+Your Name • [@your_twitter](https://twitter.com/your_twitter) • [your.email@example.com](mailto:your.email@example.com)
+GitHub: [your-username](https://github.com/your-username)
+
+Feel free to reach out if you’d like to collaborate or have feedback!
