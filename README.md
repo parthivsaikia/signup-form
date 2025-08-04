@@ -167,7 +167,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## Contact
 
-Your Name • [@your_twitter](https://twitter.com/your_twitter) • [your.email@example.com](mailto:your.email@example.com)
-GitHub: [your-username](https://github.com/your-username)
+Parthiv Saikia• [Parthiv Saikia](https://x.com/_saikiaparthiv_) • [parthivsaikia985@gmail.com](parthivsaikia985@gmail.com)
+GitHub: [parthivsaikia](https://github.com/parthivsaikia)
 
 Feel free to reach out if you’d like to collaborate or have feedback!
