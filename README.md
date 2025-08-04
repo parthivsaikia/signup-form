@@ -143,16 +143,6 @@ signup-page/
 
 ---
 
-## Future Improvements
-
-- Add form-level error summaries and accessible `aria-` attributes
-- Implement end-to-end tests with Jest & React Testing Library
-- Replace JSON-server with a real backend or GraphQL API
-- Add multi-step (“wizard”) form support
-- Improve UX: loading spinners, API error handling, animations
-
----
-
 ## Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/your-username/signup-page/issues).
