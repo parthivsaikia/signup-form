@@ -20,7 +20,6 @@
 - [Project Structure](#project-structure)
 - [Usage](#usage)
 - [Validation Rules](#validation-rules)
-- [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
